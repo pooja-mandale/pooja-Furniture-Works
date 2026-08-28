@@ -119,6 +119,9 @@ export default function Footer({ setActiveTab }) {
 
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} पूजा फर्निचर्स (Pooja Furnitures). सर्व हक्क सुरक्षित. | स्वांगी बायपास, छत्रपती संभाजीनगर</p>
+          <p style={{ marginTop: '0.4rem', fontSize: '0.85rem', color: '#9ca3af' }}>
+            Developed and Designed by Pooja Mandale
+          </p>
         </div>
       </div>
     </footer>
