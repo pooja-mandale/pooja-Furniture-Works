@@ -1,5 +1,6 @@
 import React from 'react';
-import { Phone, Mail, MapPin, MessageSquare, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import Logo from './Logo';
 import { STORE_DETAILS } from '../data/products';
 
@@ -11,14 +12,14 @@ export default function Footer({ setActiveTab }) {
           {/* Column 1: Store Intro */}
           <div>
             <Logo size="large" />
-            <p style={{ marginTop: '1.2rem', color: '#d1d5db', fontSize: '0.95rem', lineHeight: '1.7' }}>
+            <p style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.92rem', lineHeight: '1.7' }}>
               पूजा फर्निचर्स - छत्रपती संभाजीनगरमधील अग्रगण्य मंदिर उत्पादक. सागवानी लाकूड, मार्बल व आधुनिक बॅकलाईट ॐ मंदिरे उत्तम दर्जा आणि विश्वासार्ह सेवेसह बनवून मिळतील.
             </p>
           </div>
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="footer-title">नेव्हिगेशन (Links)</h3>
+            <h3 className="footer-title">नेव्हिगेशन (Quick Links)</h3>
             <ul className="footer-links">
               <li>
                 <button
@@ -100,24 +101,24 @@ export default function Footer({ setActiveTab }) {
 
           {/* Column 4: WhatsApp Direct */}
           <div>
-            <h3 className="footer-title">व्हॉट्सॲपवर ऑर्डर द्या</h3>
-            <p style={{ color: '#d1d5db', fontSize: '0.9rem', marginBottom: '1rem' }}>
-              तुमच्या पसंतीचे मंदिर किंवा फर्निचर डिझाईन फोटो व्हॉट्सॲपवर पाठवून मोफत दरपत्रक (Quotation) मिळवा.
+            <h3 className="footer-title">व्हॉट्सॲपवर संपर्क करा</h3>
+            <p style={{ color: '#d1d5db', fontSize: '0.88rem', marginBottom: '1rem', lineHeight: '1.5' }}>
+              व्हॉट्सॲप नंबर <strong>{STORE_DETAILS.phone1}</strong> वर फोटो पाठवून मोफत दरपत्रक (Quotation) मिळवा.
             </p>
             <a
-              href={`https://wa.me/${STORE_DETAILS.whatsappNumber}?text=नमस्ते%20पूजा%20फर्निचर्स!%20मला%20मंदिराबद्दल%20चौकशी%20करायची%20आहे.`}
+              href={`https://wa.me/${STORE_DETAILS.whatsappNumber}?text=${encodeURIComponent('🛕 *पूजा फर्निचर्स (7030980877)*\n----------------------------------------\nनमस्ते! मला मंदिराबद्दल व इतर फर्निचरबद्दल चौकशी करायची आहे.')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp"
               style={{ width: '100%', justifyContent: 'center' }}
             >
-              <MessageSquare size={18} /> व्हॉट्सॲपवर मेसेज करा
+              <WhatsAppIcon size={20} color="#ffffff" /> <span>व्हॉट्सॲपवर मेसेज करा</span>
             </a>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} पूजा फर्निचर्स (Pooja Furnitures). सर्व हक्क सुरक्षित.</p>
+          <p>© {new Date().getFullYear()} पूजा फर्निचर्स (Pooja Furnitures). सर्व हक्क सुरक्षित. | स्वांगी बायपास, छत्रपती संभाजीनगर</p>
         </div>
       </div>
     </footer>

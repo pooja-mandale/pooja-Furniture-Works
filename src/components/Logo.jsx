@@ -4,70 +4,76 @@ export default function Logo({ size = 'medium' }) {
   const isLarge = size === 'large';
   
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', cursor: 'pointer' }}>
-      {/* SVG Lotus & Om Motif */}
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', cursor: 'pointer' }}>
+      {/* Modern Luxury Temple-Arch & Lotus Crown Logo (No Om symbol) */}
       <svg
-        width={isLarge ? "54" : "44"}
-        height={isLarge ? "54" : "44"}
+        width={isLarge ? "52" : "42"}
+        height={isLarge ? "52" : "42"}
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        style={{ flexShrink: 0 }}
       >
-        <circle cx="50" cy="50" r="48" fill="url(#woodGrad)" stroke="#f59e0b" strokeWidth="3" />
-        {/* Lotus Petals */}
+        {/* Dark Mahogany Circular Base with Gold Border */}
+        <circle cx="50" cy="50" r="46" fill="url(#bgWoodGrad)" stroke="url(#goldGrad)" strokeWidth="3.5" />
+        
+        {/* Inner Golden Ornament Circle */}
+        <circle cx="50" cy="50" r="38" stroke="#f59e0b" strokeWidth="1" strokeDasharray="3 3" opacity="0.6" />
+
+        {/* Architectural Mandir Dome / Royal Arch Path */}
         <path
-          d="M50 15 C55 30, 70 35, 75 25 C65 40, 55 45, 50 50 C45 45, 35 40, 25 25 C30 35, 45 30, 50 15 Z"
+          d="M50 18 C53 28, 72 34, 76 52 C76 72, 66 78, 50 78 C34 78, 24 72, 24 52 C28 34, 47 28, 50 18 Z"
           fill="url(#goldGrad)"
         />
+
+        {/* Inner Arch Cutout */}
         <path
-          d="M50 50 C62 42, 82 45, 85 55 C70 60, 60 55, 50 50 C40 55, 30 60, 15 55 C18 45, 38 42, 50 50 Z"
-          fill="#f59e0b"
-          opacity="0.9"
+          d="M50 28 C52 35, 65 40, 68 54 C68 68, 60 72, 50 72 C40 72, 32 68, 32 54 C35 40, 48 35, 50 28 Z"
+          fill="#3b190c"
         />
-        {/* Om Symbol in Center */}
-        <text
-          x="50"
-          y="76"
-          fontSize="36"
-          fontWeight="bold"
-          fill="#ffffff"
-          textAnchor="middle"
-          fontFamily="'Noto Serif Devanagari', serif"
-        >
-          ॐ
-        </text>
+
+        {/* Crown Lotus Flame Center Motif */}
+        <path
+          d="M50 36 C53 46, 60 50, 62 58 C62 66, 56 68, 50 68 C44 68, 38 66, 38 58 C40 50, 47 46, 50 36 Z"
+          fill="url(#goldGrad)"
+        />
+
         <defs>
           <linearGradient id="goldGrad" x1="0" y1="0" x2="100" y2="100">
-            <stop offset="0%" stopColor="#fbbf24" />
-            <stop offset="50%" stopColor="#d97706" />
-            <stop offset="100%" stopColor="#92400e" />
+            <stop offset="0%" stopColor="#fde047" />
+            <stop offset="35%" stopColor="#f59e0b" />
+            <stop offset="75%" stopColor="#d97706" />
+            <stop offset="100%" stopColor="#78350f" />
           </linearGradient>
-          <linearGradient id="woodGrad" x1="0" y1="0" x2="100" y2="100">
+          <linearGradient id="bgWoodGrad" x1="0" y1="0" x2="100" y2="100">
             <stop offset="0%" stopColor="#4a210f" />
-            <stop offset="100%" stopColor="#250d05" />
+            <stop offset="100%" stopColor="#220d05" />
           </linearGradient>
         </defs>
       </svg>
 
-      <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.15 }}>
         <span
+          className="logo-text-main"
           style={{
-            fontSize: isLarge ? '2.2rem' : '1.65rem',
+            fontSize: isLarge ? '1.95rem' : '1.45rem',
             fontWeight: '900',
             fontFamily: "'Noto Serif Devanagari', serif",
             color: '#4a210f',
-            letterSpacing: '0.5px'
+            letterSpacing: '0.3px',
+            whiteSpace: 'nowrap'
           }}
         >
           पूजा <span style={{ color: '#d97706' }}>फर्निचर्स</span>
         </span>
         <span
+          className="logo-text-sub"
           style={{
-            fontSize: isLarge ? '0.85rem' : '0.72rem',
+            fontSize: isLarge ? '0.82rem' : '0.68rem',
             fontWeight: '700',
             color: '#78350f',
             fontFamily: "'Noto Serif Devanagari', serif",
-            letterSpacing: '1px'
+            whiteSpace: 'nowrap'
           }}
         >
           सर्व प्रकारची उत्तम मंदिरे व फर्निचर
